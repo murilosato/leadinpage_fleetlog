@@ -21,20 +21,15 @@ const Navbar: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
       window.scrollTo({
-        top: offsetPosition,
+        top: element.offsetTop - offset,
         behavior: 'smooth'
       });
     }
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/95 backdrop-blur-xl py-3 shadow-2xl border-b border-white/5' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/98 backdrop-blur-xl py-3 shadow-2xl border-b border-white/5' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -47,7 +42,7 @@ const Navbar: React.FC = () => {
                 <img 
                   src="input_file_0.png" 
                   alt="FleetLog" 
-                  className="h-8 sm:h-10 w-auto object-contain block brightness-110 contrast-110"
+                  className="h-8 sm:h-10 w-auto object-contain block brightness-110"
                   onError={() => setImgError(true)}
                 />
               ) : (
@@ -57,9 +52,9 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-10">
-            <button onClick={() => scrollToSection('features')} className="text-slate-400 hover:text-white text-sm font-semibold tracking-wide transition-colors">Funcionalidades</button>
-            <button onClick={() => scrollToSection('tour')} className="text-slate-400 hover:text-white text-sm font-semibold tracking-wide transition-colors">Interface</button>
-            <button onClick={() => scrollToSection('booking')} className="text-slate-400 hover:text-white text-sm font-semibold tracking-wide transition-colors">Contato</button>
+            <button onClick={() => scrollToSection('features')} className="text-slate-400 hover:text-white text-sm font-bold tracking-wide transition-colors uppercase text-[10px]">Funcionalidades</button>
+            <button onClick={() => scrollToSection('tour')} className="text-slate-400 hover:text-white text-sm font-bold tracking-wide transition-colors uppercase text-[10px]">Interface</button>
+            <button onClick={() => scrollToSection('booking')} className="text-slate-400 hover:text-white text-sm font-bold tracking-wide transition-colors uppercase text-[10px]">Contato</button>
             <a 
               href="https://fleetlog25.vercel.app" 
               target="_blank" 
@@ -80,12 +75,12 @@ const Navbar: React.FC = () => {
 
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-slate-900/98 backdrop-blur-2xl border-t border-white/5 p-6 space-y-4 shadow-2xl animate-in slide-in-from-top duration-300">
-          <button onClick={() => scrollToSection('features')} className="block w-full text-left text-white text-lg font-medium py-2 border-b border-white/5">Funcionalidades</button>
-          <button onClick={() => scrollToSection('tour')} className="block w-full text-left text-white text-lg font-medium py-2 border-b border-white/5">Interface</button>
-          <button onClick={() => scrollToSection('booking')} className="block w-full text-left text-white text-lg font-medium py-2 border-b border-white/5">Contato</button>
+          <button onClick={() => scrollToSection('features')} className="block w-full text-left text-white text-lg font-black py-4 border-b border-white/5 uppercase tracking-tighter">Funcionalidades</button>
+          <button onClick={() => scrollToSection('tour')} className="block w-full text-left text-white text-lg font-black py-4 border-b border-white/5 uppercase tracking-tighter">Interface</button>
+          <button onClick={() => scrollToSection('booking')} className="block w-full text-left text-white text-lg font-black py-4 border-b border-white/5 uppercase tracking-tighter">Contato</button>
           <a 
             href="https://fleetlog25.vercel.app" 
-            className="block bg-[#00558C] text-white py-4 rounded-2xl font-bold text-center text-lg mt-4 shadow-xl"
+            className="block bg-[#00558C] text-white py-5 rounded-2xl font-black text-center text-lg mt-4 shadow-xl uppercase tracking-widest"
           >
             Acessar Sistema
           </a>

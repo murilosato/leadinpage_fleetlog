@@ -4,20 +4,8 @@ import { ArrowRight, PlayCircle, ShieldCheck } from 'lucide-react';
 import { DashboardMockup } from './VisualMockups';
 
 const Hero: React.FC = () => {
-  const scrollToBooking = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('booking');
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollToTour = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('tour');
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 80,
@@ -32,21 +20,21 @@ const Hero: React.FC = () => {
         <img 
           src="input_file_1.png" 
           alt="" 
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20 grayscale brightness-50"
           onError={(e) => {
             (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2000';
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="animate-in fade-in slide-in-from-left-10 duration-1000">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full text-blue-400 text-xs font-bold mb-8 tracking-widest uppercase">
+            <div className="inline-flex items-center space-x-2 bg-[#00558C]/20 border border-[#00558C]/30 px-4 py-2 rounded-full text-blue-400 text-xs font-bold mb-8 tracking-widest uppercase">
               <ShieldCheck size={14} className="animate-pulse" />
-              <span>SISTEMA DE GESTÃO COMPLETO</span>
+              <span>SISTEMA DE GESTÃO ESPECIALIZADO</span>
             </div>
             
             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white leading-[0.95] mb-8 tracking-tighter">
@@ -55,31 +43,29 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl font-medium">
-              Controle abastecimento, lubrificantes, oficina e checklists com um software especializado na sua operação. Feito para quem não pode parar.
+              Controle abastecimento, lubrificantes, oficina e checklists com um software focado na sua operação. Simples, direto e eficiente.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <a 
-                href="#booking" 
-                onClick={scrollToBooking}
+              <button 
+                onClick={() => scrollToSection('booking')}
                 className="px-10 py-5 bg-[#00558C] hover:bg-blue-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all shadow-2xl shadow-blue-900/40 hover:-translate-y-1"
               >
-                <span>Agendar Apresentação</span>
+                <span>Agendar Demonstração</span>
                 <ArrowRight size={20} />
-              </a>
-              <a 
-                href="#tour" 
-                onClick={scrollToTour}
+              </button>
+              <button 
+                onClick={() => scrollToSection('tour')}
                 className="px-10 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all border border-white/10 backdrop-blur-md"
               >
                 <PlayCircle size={20} />
                 <span>Ver Interface</span>
-              </a>
+              </button>
             </div>
           </div>
 
           <div className="relative hidden lg:block animate-in fade-in zoom-in duration-1000 delay-300">
-            <div className="relative z-20 rounded-[2.5rem] border border-white/10 bg-slate-900/80 p-3 shadow-[0_0_80px_-12px_rgba(59,130,246,0.4)] backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-all duration-700 aspect-[16/10] w-[600px]">
+            <div className="relative z-20 rounded-[2.5rem] border border-white/10 bg-slate-900/80 p-3 shadow-[0_0_80px_-12px_rgba(59,130,246,0.4)] backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-all duration-700 aspect-[16/10] w-[600px] overflow-hidden">
                <img 
                 src="input_file_3.png" 
                 alt="FleetLog Dashboard" 

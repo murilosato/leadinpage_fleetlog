@@ -21,19 +21,19 @@ export const DashboardMockup = () => (
     <div className="p-4 grid grid-cols-2 gap-4 flex-1">
       <div className="bg-[#00558C] rounded-2xl p-4 text-white flex flex-col items-center justify-center space-y-3 shadow-lg border border-white/10 hover:brightness-110 transition-all">
         <div className="p-2 bg-white/10 rounded-lg"><ClipboardCheck size={20} /></div>
-        <span className="text-[11px] font-bold uppercase tracking-widest">Checklist</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-center">Checklist</span>
       </div>
       <div className="bg-[#10b981] rounded-2xl p-4 text-white flex flex-col items-center justify-center space-y-3 shadow-lg border border-white/10 hover:brightness-110 transition-all">
         <div className="p-2 bg-white/10 rounded-lg"><Fuel size={20} /></div>
-        <span className="text-[11px] font-bold uppercase tracking-widest">Abastecimento</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-center">Abastecimento</span>
       </div>
       <div className="bg-[#f59e0b] rounded-2xl p-4 text-white flex flex-col items-center justify-center space-y-3 shadow-lg border border-white/10 hover:brightness-110 transition-all">
         <div className="p-2 bg-white/10 rounded-lg"><Droplets size={20} /></div>
-        <span className="text-[11px] font-bold uppercase tracking-widest">Lubrificante</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-center">Lubrificante</span>
       </div>
       <div className="bg-[#ef4444] rounded-2xl p-4 text-white flex flex-col items-center justify-center space-y-3 shadow-lg border border-white/10 hover:brightness-110 transition-all">
         <div className="p-2 bg-white/10 rounded-lg"><PenTool size={20} /></div>
-        <span className="text-[11px] font-bold uppercase tracking-widest">Oficina</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-center">Oficina</span>
       </div>
     </div>
     <div className="p-3 bg-[#0f172a] text-center border-t border-white/5">
@@ -43,36 +43,40 @@ export const DashboardMockup = () => (
 );
 
 export const ChecklistMockup = () => (
-  <div className="bg-[#0a0f1d] w-full h-full rounded-2xl overflow-hidden flex flex-col border border-white/5 shadow-2xl">
-    <div className="p-5 bg-[#111827] border-b border-white/5 flex justify-between items-start">
+  <div className="bg-[#0a0f1d] w-full h-full rounded-[2.5rem] overflow-hidden flex flex-col border border-white/5 shadow-2xl">
+    <div className="p-8 bg-[#111827] border-b border-white/5 flex justify-between items-start">
       <div>
-        <h3 className="text-white font-bold text-lg">Etapa 1: Desligado</h3>
-        <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tight">Preencha todos os campos (*)</p>
+        <h3 className="text-white font-bold text-2xl tracking-tight">Etapa 1: Desligado</h3>
+        <p className="text-[11px] text-slate-500 uppercase font-black tracking-widest mt-1">Preencha todos os campos (*)</p>
       </div>
-      <div className="bg-[#00558C]/20 border border-[#00558C]/30 text-[#00558C] px-3 py-1 rounded-lg text-xs font-bold">1/3</div>
+      <div className="bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-xl text-xs font-black">1/3</div>
     </div>
-    <div className="p-5 space-y-6 overflow-y-auto">
-      <div className="inline-block px-3 py-1 bg-[#00558C]/10 border border-[#00558C]/20 rounded-lg text-[#00558C] text-[10px] font-bold uppercase tracking-wider">MOTOR</div>
-      
-      <div className="space-y-4">
-        <div className="flex justify-between items-center">
-          <h4 className="text-white text-xs font-bold leading-relaxed max-w-[70%] uppercase tracking-tight">1. NÍVEL DE ÓLEO HIDRÁULICO - RECOLHER PISTÕES *</h4>
-          <div className="flex bg-white/5 rounded-lg p-0.5 border border-white/10">
-            <button className="px-3 py-1 bg-[#00558C] text-white text-[8px] font-bold rounded-md">SIM</button>
-            <button className="px-3 py-1 text-slate-500 text-[8px] font-bold">NÃO</button>
-          </div>
-        </div>
+    <div className="p-8 space-y-10 overflow-y-auto bg-slate-950/50">
+      <div>
+        <div className="inline-block px-4 py-1.5 bg-[#00558C]/10 border border-[#00558C]/20 rounded-xl text-[#00558C] text-[10px] font-black uppercase tracking-[0.2em] mb-8">MOTOR</div>
         
-        <div className="grid grid-cols-3 gap-2">
-          <div className="py-4 border border-white/10 rounded-xl bg-white/5 flex items-center justify-center text-[9px] font-black text-slate-400 uppercase tracking-widest hover:border-[#00558C] cursor-pointer transition-all">OK</div>
-          <div className="py-4 border border-white/10 rounded-xl bg-white/5 flex items-center justify-center text-[9px] font-black text-slate-400 uppercase tracking-widest hover:border-yellow-500 cursor-pointer transition-all">FALTA</div>
-          <div className="py-4 border border-white/10 rounded-xl bg-white/5 flex items-center justify-center text-[9px] font-black text-slate-400 uppercase tracking-widest hover:border-red-500 cursor-pointer transition-all">DEFEITO</div>
+        <div className="space-y-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <h4 className="text-white text-sm font-bold leading-tight max-w-md uppercase tracking-tight">1. NÍVEL DE ÓLEO HIDRÁULICO - RECOLHER PISTÕES *</h4>
+            <div className="flex bg-white/5 rounded-xl p-1 border border-white/10 shrink-0">
+              <button className="px-5 py-2 bg-[#00558C] text-white text-[10px] font-black rounded-lg shadow-lg">SIM</button>
+              <button className="px-5 py-2 text-slate-600 text-[10px] font-black">NÃO</button>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-3">
+            <button className="py-5 border border-white/10 rounded-2xl bg-white/5 flex items-center justify-center text-[10px] font-black text-slate-500 uppercase tracking-widest hover:border-[#00558C] hover:text-white transition-all">OK</button>
+            <button className="py-5 border border-white/10 rounded-2xl bg-white/5 flex items-center justify-center text-[10px] font-black text-slate-500 uppercase tracking-widest hover:border-yellow-500 hover:text-white transition-all">FALTA</button>
+            <button className="py-5 border border-white/10 rounded-2xl bg-white/5 flex items-center justify-center text-[10px] font-black text-slate-500 uppercase tracking-widest hover:border-red-500 hover:text-white transition-all">DEFEITO</button>
+          </div>
         </div>
       </div>
 
-      <div className="pt-4 border-t border-white/5">
-        <div className="inline-block px-3 py-1 bg-[#00558C]/10 border border-[#00558C]/20 rounded-lg text-[#00558C] text-[10px] font-bold uppercase tracking-wider mb-4">CABINE INTERNA/EXTERNA</div>
-        <h4 className="text-white text-xs font-bold uppercase tracking-tight opacity-50 italic">Próximos itens...</h4>
+      <div className="pt-8 border-t border-white/5">
+        <div className="inline-block px-4 py-1.5 bg-[#00558C]/10 border border-[#00558C]/20 rounded-xl text-[#00558C] text-[10px] font-black uppercase tracking-[0.2em] mb-8">CABINE INTERNA/EXTERNA</div>
+        <div className="h-20 border-2 border-dashed border-white/5 rounded-2xl flex items-center justify-center">
+            <span className="text-slate-700 text-[10px] font-black uppercase tracking-[0.3em]">Próximos Itens</span>
+        </div>
       </div>
     </div>
   </div>
