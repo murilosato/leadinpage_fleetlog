@@ -1,11 +1,11 @@
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import AppTour from './components/AppTour';
-import BookingSection from './components/BookingSection';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import Features from './components/Features.tsx';
+import AppTour from './components/AppTour.tsx';
+import BookingSection from './components/BookingSection.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (
@@ -18,19 +18,19 @@ const App: React.FC = () => {
         <section className="py-12 bg-slate-900/50 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
+              <div className="animate-in" style={{ animationDelay: '0.1s' }}>
                 <p className="text-3xl font-extrabold text-white">500+</p>
                 <p className="text-slate-500 text-sm uppercase tracking-wide mt-1">Veículos Ativos</p>
               </div>
-              <div>
+              <div className="animate-in" style={{ animationDelay: '0.2s' }}>
                 <p className="text-3xl font-extrabold text-white">30%</p>
                 <p className="text-slate-500 text-sm uppercase tracking-wide mt-1">Economia Média</p>
               </div>
-              <div>
+              <div className="animate-in" style={{ animationDelay: '0.3s' }}>
                 <p className="text-3xl font-extrabold text-white">Zero</p>
                 <p className="text-slate-500 text-sm uppercase tracking-wide mt-1">Uso de Papel</p>
               </div>
-              <div>
+              <div className="animate-in" style={{ animationDelay: '0.4s' }}>
                 <p className="text-3xl font-extrabold text-white">100%</p>
                 <p className="text-slate-500 text-sm uppercase tracking-wide mt-1">Nacional</p>
               </div>
@@ -56,16 +56,17 @@ const App: React.FC = () => {
                 <a 
                   href="https://fleetlog25.vercel.app" 
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white text-[#00558C] px-10 py-4 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:-translate-y-1"
                 >
                   Abrir Sistema
                 </a>
-                <a 
-                  href="#booking" 
+                <button 
+                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all transform hover:-translate-y-1"
                 >
                   Agendar Demonstração
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -79,6 +80,7 @@ const App: React.FC = () => {
       <a 
         href="https://wa.me/5567991917463" 
         target="_blank" 
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 active:scale-95 md:hidden"
       >
         <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">

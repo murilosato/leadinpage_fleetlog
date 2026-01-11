@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ArrowRight, PlayCircle, ShieldCheck } from 'lucide-react';
-import { DashboardMockup } from './VisualMockups';
+import { DashboardMockup } from './VisualMockups.tsx';
 
 const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-in fade-in slide-in-from-left-10 duration-1000">
+          <div className="animate-in">
             <div className="inline-flex items-center space-x-2 bg-[#00558C]/20 border border-[#00558C]/30 px-4 py-2 rounded-full text-blue-400 text-xs font-bold mb-8 tracking-widest uppercase">
               <ShieldCheck size={14} className="animate-pulse" />
               <span>SISTEMA DE GESTÃO ESPECIALIZADO</span>
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative hidden lg:block animate-in fade-in zoom-in duration-1000 delay-300">
+          <div className="relative hidden lg:block animate-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative z-20 rounded-[2.5rem] border border-white/10 bg-slate-900/80 p-3 shadow-[0_0_80px_-12px_rgba(59,130,246,0.4)] backdrop-blur-sm transform rotate-1 hover:rotate-0 transition-all duration-700 aspect-[16/10] w-[600px] overflow-hidden">
                <img 
                 src="input_file_3.png" 
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
                 className="w-full h-full object-cover rounded-[2rem] shadow-2xl border border-white/5"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
-                  (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
+                  (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
                 }}
               />
               <div className="hidden w-full h-full">

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { DashboardMockup, HistoryMockup, ChecklistMockup } from './VisualMockups';
+import { DashboardMockup, HistoryMockup, ChecklistMockup } from './VisualMockups.tsx';
 
 const screenshots = [
   {
@@ -92,11 +92,6 @@ const AppTour: React.FC = () => {
           </div>
         ))}
       </div>
-
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
     </section>
   );
 };
